@@ -52,12 +52,12 @@ GOOD LUCK
 
 var john = {
     fullName: 'John Smith',
-    bills : [124, 48, 168, 180, 42],
+    bills : [124, 48, 268, 180, 42],
     calcTips: function() {
         this.tips = [];
         this.finalValues = [];
         
-        for (var i = 0; i < this.bills.lenght; i++)
+        for (var i = 0; i < this.bills.length; i++)
         {
             // Determine percentage based on tipping
             // rules
