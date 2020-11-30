@@ -35,33 +35,38 @@ bmiMark = massMark / (heightMark * heightMark);
 
 var john = {
     fullName: 'John Smith',
-    weight: 104,
-    height: 1.8,
-    calcBmi: function(weight, height) {
-        return this.weight / (this.height * this.height);
+    mass: 82,
+    height: 1.84,
+    calcBMI: function() {
+        this.BMI = this.mass / (this.height * this.height);
+        return this.mass / (this.height * this.height);
     }
 };
-
-john.bmi = john.calcBmi(this.weight, this.height);
 
 var mark = {
-    fullName:'Mark Donnovan',
-    weight: 82,
-    height: 1.82,
-    calcBmi: function(weight, height) {
-        return this.weight / (this.height * this.height);
+    fullName: 'Mark Matters',
+    mass: 74,
+    height: 1.70,
+    calcBMI: function() {
+        this.BMI = this.mass / (this.height * this.height);
+        return this.mass / (this.height * this.height);
     }
-};
+    
+}
 
-mark.bmi = mark.calcBmi(this.weight, this.height);
+john.calcBMI();
+mark.calcBMI();
+console.log(john['BMI']);
 
-console.log(john);
-console.log(mark);
-
-if (john.bmi > mark.bmi) {
-    console.log(john.fullName + ' has highest BMI, and it\'s value is '
-    + john.bmi);
+if (john['BMI'] > mark['BMI']) {
+    console.log(john.fullName + ' has higher BMI (' 
+    + john['BMI'] + ') than ' + mark.fullName + ' whose BMI is '
+     + mark['BMI']);
+} else if (mark['BMI'] > john['BMI']) {
+    console.log(mark.fullName + ' has higher BMI (' 
+    + mark['BMI'] + ') than ' + john.fullName + ' whose BMI is '
+     + john['BMI']);
 } else {
-    console.log(mark.fullName + ' has highest BMI, and it\'s value is '
-    + mark.bmi);
+    console.log(john.fullName + ' and ' + mark.fullName + 
+    ' have same BMI');
 }

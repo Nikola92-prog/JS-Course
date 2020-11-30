@@ -24,37 +24,28 @@ tip).
 
 GOOD LUCK
 */
-var price1 = 124;
-var price2 = 48;
-var price3 = 268;
 
-function tipCalculator(price) {
-    if (price <= 50) {
-        return price * 0.2;
-    } else if (price > 50 && price < 200) {
-        return price * 0.15;
-    } else if (price > 200) {
-        return price * 0.1;
-    }  
+var bill1 = 124;
+var bill2 = 48;
+var bill3 = 268;
+
+var tips = [];
+var totals = [];
+
+function tipCalculator(bill) {
+    var tip;
+    if (bill < 50) {
+        tip = bill * 0.2;
+    } else if (bill >= 50 && bill <= 200) {
+        tip = bill * 0.15;
+    } else {
+        tip = bill * 0.1;
+    }
+    return tip;
 }
 
-var tip1 = tipCalculator(price1);
-var tip2 = tipCalculator(price2);
-var tip3 = tipCalculator(price3);
-
-console.log(tip1, tip2, tip3);
-
-function totalAmount(price) {
-    return price + tipCalculator(price);
-}
-
-var total1 = totalAmount(price1);
-var total2 = totalAmount(price2);
-var total3 = totalAmount(price3);
-
-console.log(total1, total2, total3);
-
-var tips = [tip1, tip2, tip3];
-var totalPrices = [total1, total2, total3];
+tips.push(tipCalculator(bill1), tipCalculator(bill2), tipCalculator(bill3));
 console.log(tips);
-console.log(totalPrices);
+
+totals.push(tipCalculator(bill1) + bill1, tipCalculator(bill2) + bill2, tipCalculator(bill3 + 3));
+console.log(totals);
